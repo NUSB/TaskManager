@@ -1,0 +1,50 @@
+<?xml version = "1.0" encoding = "utf-8"?> <xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema"> <!-- complexType --> 
+    <xs:element name = "Orders">  
+        <xs:complexType>   
+            <xs:sequence>    
+                <xs:element name = "Person">     
+                    <xs:complexType>      
+                        <xs:sequence>       
+                            <xs:element name = "Customer">        
+                                <xs:complexType>         
+                                    <xs:sequence>          
+                                        <xs:group ref = "NewPersonGroup"/>          
+                                        <xs:element name = "Information" type = "xs:string"/>         
+                                    </xs:sequence>        
+                                </xs:complexType> 29  
+                            </xs:element>             
+                            <xs:element name = "ProjectManager">        
+                                <xs:complexType>         
+                                    <xs:sequence>          
+                                        <xs:group ref = "NewPersonGroup"/>          
+                                        <xs:element name = "Style" type = "xs:string"/>          
+                                        <xs:element name = "Education" type = "xs:string"/>         
+                                    </xs:sequence>        
+                                </xs:complexType>       
+                            </xs:element>             
+                        </xs:sequence>     
+                    </xs:complexType>    
+                </xs:element>    
+                <xs:element name = "Project">     
+                    <xs:complexType>      
+                        <xs:sequence>       
+                            <xs:element name = "Address" type = "xs:string"/>       
+                            <xs:element name = "Area" type = "xs:decimal"/>       
+                            <xs:element name = "Duration" type = "xs:integer"/>       
+                            <xs:element name = "EmployeesNumber" type = "xs:integer"/>       
+                            <xs:element name = "Price" type = "xs:integer"/>      
+                        </xs:sequence>     
+                    </xs:complexType>    
+                </xs:element>        
+            </xs:sequence>  
+        </xs:complexType>  
+    </xs:element>   
+    <xs:group name = "NewPersonGroup">   
+        <xs:sequence>    
+            <xs:element name = "Name" type = "xs:string"/>    
+            <xs:element name = "Phone" type = "xs:string"/> 30  
+            <xs:element name = "City" type = "xs:string"/>    
+            <xs:element name = "Age" type = "xs:integer"/>   
+        </xs:sequence>  
+    </xs:group> 
+</xs:schema> 
