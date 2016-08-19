@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ru">
     <head>
         <meta charset="utf-8">
@@ -22,54 +21,12 @@
 
         <div class="container-fluid">
             <div id="wrapper">
-                
+
                 <%@include file="WEB-INF/include/leftMenu.jspf" %>
-                
+
                 <div class="row" id="page-content-wrapper">
                     <div class="col-md-12">
-                        <nav class="navbar navbar-default" role="navigation">
-                            <div class="navbar-header">
-
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                                </button> <a href="#menu-toggle" class="btn navbar-brand" id="menu-toggle">Панель управления</a>
-                            </div>
-
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                    <li class="active">
-                                        <a href="#">Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Link</a>
-                                    </li>
-
-                                </ul>
-
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль<strong class="caret"></strong></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="#">Рабочий стол</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Another action</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Настройки</a>
-                                            </li>
-                                            <li class="divider">
-                                            </li>
-                                            <li>
-                                                <a href="#">Выход</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </nav>
+                        <%@include file="WEB-INF/include/topMenu.jspf" %>
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>
@@ -123,7 +80,7 @@
                                                 Выполняеться
                                             </td>
                                         </tr>
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
@@ -169,7 +126,7 @@
                                                         1
                                                     </td>
                                                     <td>
-                                                        Переезд в Америку
+                                                        <a href="ViewGoal">Переезд в Америку</a>
                                                     </td>
                                                     <td>
                                                         01/04/2012
@@ -188,9 +145,7 @@
                                         <h3>
                                             Мой прогресс
                                         </h3>
-                                        <div class="row">
-                                            <div class="col-md-12" id="myProgress" style="height:200px;"></div>
-                                        </div>
+                                        <div id="myProgress" style="height:200px;"></div>
                                     </div>
                                 </div>
                             </div>
