@@ -41,13 +41,13 @@
             <div id="wrapper">
 
                 <%@include file="WEB-INF/include/leftMenu.jspf" %>
-
                 <div class="row" id="page-content-wrapper">
                     <div class="col-md-12">
                         <%@include file="WEB-INF/include/topMenu.jspf" %>
                         <div class="row">
                             <div class="col-md-12 "  >
                                 <h3>Состояния счетов</h3>
+                                        
                                 <div id="tableStateAcount"></div>
                                 <h3>Общая динамика</h3>
                                 <div id="chartsStateAount"></div>
@@ -157,7 +157,7 @@
             webix.ui({
                 view: "chart",
                 container: "chartsStateAount",
-                type: "spline",
+                type: "line",
                 value: "#sales#",
                 color: "#36abee",
                 height: 300,

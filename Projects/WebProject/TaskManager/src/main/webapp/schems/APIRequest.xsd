@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="request">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="authorization" type="Authorization" minOccurs="0"/>
+                <xs:element name="createGoal" type="CreateGoal" minOccurs="0"/>
+                <xs:element name="createPlanToDay" type="CreatePlanToDay" minOccurs="0"/>
+                <!--сюда добавлять новые функции-->
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="CreatePlanToDay">
+        <xs:annotation>
+            <xs:documentation>
+                Данная функция предназначена для создания цели авторизированым пользователем
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="date"/>
+            <xs:element name="plan">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:all>
+                                    <xs:element name="number"/>
+                                    <xs:element name="name"/>
+                                    <xs:element name="status">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="Begin"/>
+                                                <xs:enumeration value="Processed"/>
+                                                <xs:enumeration value="End"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" name="globalPlan">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="numberGoal"/>
+                                                <xs:element name="numberItemPlan"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" name="notice"/>
+                                </xs:all>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType> 
+       
+    <xs:complexType name="CreateGoal">
+        <xs:annotation>
+            <xs:documentation>
+                Данная функция предназначена для создания цели авторизированым пользователем
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="user"/>
+            <xs:element name="name"/>
+            <xs:element name="anotation"/>
+            <xs:element name="beginDate"/>
+            <xs:element name="endDate"/>
+            <xs:element name="plan">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:all>
+                                    <xs:element name="number"/>
+                                    <xs:element name="name"/>
+                                    <xs:element name="beginDate"/> 
+                                    <xs:element name="endDate"/>
+                                    <xs:element minOccurs="0" name="acount"/>
+                                </xs:all>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>  
+     
+    <xs:complexType name="Authorization">
+        <xs:annotation>
+            <xs:documentation>
+                Данная функция предназначена для авторизации пользователя 
+                структура ответа описана в документе APIResponce.xsd с аналогичным именем
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/> <!--логин пользователя-->
+            <xs:element name="hashPass" type="xs:string"/> <!--зашифрованый пароль md5-->
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

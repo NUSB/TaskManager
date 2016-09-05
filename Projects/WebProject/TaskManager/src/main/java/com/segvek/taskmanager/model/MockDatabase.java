@@ -32,7 +32,7 @@ public class MockDatabase {
         acount2.setUser(user1);
         user1.getAcounts().add(acount2);
 
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 50; i++) {
             FixingAcount fixingAcount1 = new FixingAcount("09.07.199" + i, user1, new Long(i));
             FixingHashAcount fha1 = new FixingHashAcount(acount1, fixingAcount1, Math.cos(2.0 * i) * 10, new Long(i));
             fixingAcount1.getFha().add(fha1);
@@ -44,6 +44,7 @@ public class MockDatabase {
                 acount2.getFha().add(fha2);
             }
         }
+
         users.add(user1);
     }
 

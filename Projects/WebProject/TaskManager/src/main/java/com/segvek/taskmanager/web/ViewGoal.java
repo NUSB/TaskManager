@@ -45,6 +45,7 @@ public class ViewGoal extends HttpServlet {
         plan.add(item1);
         request.setAttribute("plan", plan);
         request.getRequestDispatcher(URL).forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
