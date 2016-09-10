@@ -5,7 +5,7 @@
  */
 package com.segvek.taskmanager.web;
 
-import com.segvek.taskmanager.model.ItemGoalPlan;
+import com.segvek.taskmanager.service.model.ItemGoalPlan;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

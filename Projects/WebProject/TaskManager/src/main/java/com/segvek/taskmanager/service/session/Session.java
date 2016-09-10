@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.segvek.taskmanager.session;
+package com.segvek.taskmanager.service.session;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -15,7 +15,8 @@ import java.util.Set;
 public interface Session extends Serializable {
 
     /**
-     * Возвращяет идентиіикатор сесии
+     * Возвращяет идентификатор сесии
+     *
      * @return
      */
     public String getIdSession();

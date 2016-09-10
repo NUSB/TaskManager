@@ -9,6 +9,7 @@
                 <xs:element name="authorization" type="Authorization" minOccurs="0"/>
                 <xs:element name="createGoal" type="CreateGoal" minOccurs="0"/>
                 <xs:element name="createPlanToDay" type="CreatePlanToDay" minOccurs="0"/>
+                <xs:element name="test" minOccurs="0"/>
                 <!--сюда добавлять новые функции-->
             </xs:all>
         </xs:complexType>

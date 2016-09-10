@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.segvek.taskmanager.session.impl;
+package com.segvek.taskmanager.service.session.impl;
 
-import com.segvek.taskmanager.session.Session;
+import com.segvek.taskmanager.service.session.Session;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -20,7 +21,7 @@ public class SessionImpl implements Session {
 
     @Override
     public String getIdSession() {
-        return "" + hashCode();
+        return DigestUtils.md5Hex(this.toString());
     }
 
     @Override

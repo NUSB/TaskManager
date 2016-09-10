@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.segvek.taskmanager.service.functions.functionTest;
+package com.segvek.taskmanager.service.functions.functionAuthorization;
 
 import com.segvek.taskmanager.service.Function;
 import com.segvek.taskmanager.service.ManagerFunction;
@@ -12,16 +12,16 @@ import com.segvek.taskmanager.service.ManagerFunction;
  *
  * @author Panas
  */
-public class TestFunctionManager implements ManagerFunction {
+public class AuthorizationFunctionManager implements ManagerFunction {
 
     @Override
     public boolean isProcesses(String nameTag) {
-        return nameTag.equals("test");
+        return nameTag.equals("authorization");
     }
 
     @Override
     public Function getFunction() {
-        return new TestFunction();
+        return new AuthorizationFunction();
     }
 
 }

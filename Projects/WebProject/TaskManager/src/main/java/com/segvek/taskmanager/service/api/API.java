@@ -1,16 +1,19 @@
-package com.segvek.taskmanager.api;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.segvek.taskmanager.service.api;
 
+import com.segvek.taskmanager.service.ParserManager;
+import com.segvek.taskmanager.service.util.InputStreamUtil;
+import com.segvek.taskmanager.service.util.SpringUtil;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import org.xml.sax.SAXException;
+
 
 /**
  *
@@ -18,22 +21,20 @@ import org.xml.sax.SAXException;
  */
 public class API extends HttpServlet {
 
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if (request.getContentType() != null && request.getContentType().equals("text/xml; charset=utf-8")) {
             response.setContentType("text/xml;charset=UTF-8");
-
-            SAXParserFactory f = SAXParserFactory.newInstance();
-            Handler handler = new Handler();
+            String xmlRequest = InputStreamUtil.readInputStrean(request.getInputStream());
+            String xmlResponse = "error";
             try {
-                SAXParser parser = f.newSAXParser();
-
-                parser.parse(request.getInputStream(), handler);
-            } catch (ParserConfigurationException | SAXException ex) {
-                Logger.getLogger(API.class.getName()).log(Level.SEVERE, null, ex);
+                ParserManager parserManager = (ParserManager) SpringUtil.getInstance().getBean("prserManager");
+//                xmlResponse = parserManager.parse(xmlRequest);
+            } catch (Exception ex) {
+                response.getWriter().print("erorrrrruyjhgf");
             }
-
-            response.getWriter().print(handler.getMessage());
+            response.getWriter().print("uyjhgf");
             return;
         } else {
             response.setContentType("text/html;charset=UTF-8");

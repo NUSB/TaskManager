@@ -18,7 +18,7 @@ public class GlobalParserImpl extends DefaultHandler implements GlobalParser {
     private String responce = "";
 
     private String nameActivFunction;
-    private String tempRequest;
+    private String tempRequest = "";
     private ManagerFunctions manager;
 
     public GlobalParserImpl() {

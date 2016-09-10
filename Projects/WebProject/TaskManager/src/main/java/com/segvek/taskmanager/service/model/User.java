@@ -3,17 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.segvek.taskmanager.model;
+package com.segvek.taskmanager.service.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *
  * @author Panas
  */
+@Entity
+@Table(name = "User")
 public class User extends Model {
 
+    @Column(name = "name", length = 50)
     private String name;
     private String mail;
     private String login;
@@ -76,6 +82,11 @@ public class User extends Model {
 
     public void setFixingsAcounts(List<FixingAcount> fixingsAcounts) {
         this.fixingsAcounts = fixingsAcounts;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "name=" + name + ", mail=" + mail + ", login=" + login + ", hashPass=" + hashPass + ", acounts=" + acounts + ", fixingsAcounts=" + fixingsAcounts + '}';
     }
 
 }

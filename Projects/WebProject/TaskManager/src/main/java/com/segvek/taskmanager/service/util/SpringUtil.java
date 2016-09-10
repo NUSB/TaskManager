@@ -19,7 +19,7 @@ public class SpringUtil {
     private BeanFactory beanFactory;
 
     private SpringUtil() {
-        beanFactory = new XmlBeanFactory(new FileSystemResource("src\\main\\resources\\ApplicationContext.xml"));
+        beanFactory = new XmlBeanFactory(new FileSystemResource("ApplicationContext.xml"));
     }
 
     public BeanFactory getBeanFactory() {

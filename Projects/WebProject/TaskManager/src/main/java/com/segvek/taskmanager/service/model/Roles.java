@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.segvek.taskmanager.model;
-
+package com.segvek.taskmanager.service.model;
 
 /**
  *
  * @author Panas
  */
-public class FixingItemPlan extends Model {
-
+public enum Roles {
+    ADMINISTRATOR,
+    USER,
+    GUEST
 }

@@ -19,7 +19,6 @@ public interface ParserManager {
      *
      * @return xml - document(responce)
      *
-     * @throws Exception
      */
-    public String parse(String xml) throws Exception;
+    public String parse(String xml);
 }

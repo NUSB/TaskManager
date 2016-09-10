@@ -5,8 +5,8 @@
  */
 package com.segvek.taskmanager.web;
 
-import com.segvek.taskmanager.model.MockDatabase;
-import com.segvek.taskmanager.model.User;
+import com.segvek.taskmanager.service.model.MockDatabase;
+import com.segvek.taskmanager.service.model.User;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

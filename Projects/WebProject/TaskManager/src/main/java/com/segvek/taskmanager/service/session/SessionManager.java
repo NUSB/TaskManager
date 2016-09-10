@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.segvek.taskmanager.session;
+package com.segvek.taskmanager.service.session;
 
 /**
  *
@@ -25,7 +25,7 @@ public interface SessionManager {
      *
      * @return возвращяет идентификатор (id) к только что созданой сесии
      */
-    public String createSession();
+    public Session createSession();
 
     /**
      * Позволяет закрыть сесию по id
